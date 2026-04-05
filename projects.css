@@ -1,0 +1,186 @@
+:root {
+    --bg-color: #f3efd7;
+    --link-color: #477998;
+    --header-color:#5bc2af;
+    --dark-blue:#1f3148;
+    --orange:#f2633f;
+    --georgia-clay:#51210d;
+
+}
+
+body {
+    margin: 0;
+    font-family: 'Cormorant Garamond', serif;
+    background: var(--bg-color);
+    color: var(--georgia-clay);
+    font-weight:300;
+}
+
+@font-face {
+    font-family: mango;
+    src: url(mango.otf);
+}
+
+/* --------------------------------------------------------------------
+ * ## TYPOGRAPHY
+ * -------------------------------------------------------------------- */
+
+h1 {
+    font-family: mango;
+    font-size: 8rem;
+    color: var(--link-color);
+    margin-bottom: 1.5rem;
+    text-shadow: 5px 2px 5px  rgba(0, 0, 0, 0.2);
+}
+
+p {
+    font-size: 1.20rem;
+    line-height: 1.8;
+}
+
+/* --------------------------------------------------------------------
+ * ## BODY CONTENT
+ * -------------------------------------------------------------------- */
+
+.main_content {
+    min-height: 100vh;
+    position: relative;
+    /*display: flex;
+    align-items: flex-end;*/
+    padding: 6rem 6vw;
+    overflow: hidden;
+}
+
+/*.main_content::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url('../assets/botantical.jpeg') center / cover no-repeat;
+    filter: contrast(1.05) saturate(0.9);
+    z-index: 1;
+}*/
+
+/*.main_content::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+ }*/
+
+.content {
+    position: relative;
+    z-index: 3;
+    max-width: 520px;
+}
+
+.content_bottom{
+    z-index: 3;
+    max-width: initial ;
+}
+
+.small_title {
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    font-size: 0.75rem;
+    margin-bottom: 0.9rem;
+}
+
+.user_info {
+    margin-top: 2.5rem;
+    font-size: 1rem;
+}
+
+.user_info span {
+    display: block;
+    margin-bottom: 0.4rem;
+}
+.evidence-box {
+    margin: 30px 0;
+    background: var(--gray);
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.evidence-box img { 
+    width: 100%; 
+    display: block; 
+    border-radius: 4px; 
+}
+
+.caption {
+    font-size: 0.85rem;
+    color: #888;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.frame{
+  border: var(--corner) solid;
+  border-image-source:
+    radial-gradient(
+      closest-side,
+      transparent 10%, var(--bg) 10%,
+      var(--bg) 20%, transparent 20%,
+      transparent 30%, var(--bg) 30%,
+      var(--bg) 40%, transparent 40%,
+      transparent 50%, var(--bg) 50%,
+      var(--bg) 60%, transparent 60%,
+      transparent 70%, var(--bg) 70%,
+      var(--bg) 80%, transparent 80%,
+      transparent 90%, var(--bg) 99.99%,
+      var(--bg) 100%, transparent 99.99%,
+    );
+  border-image-slice: 49%;
+}
+
+/* --------------------------------------------------------------------
+ * ## BACK AND FORWARD BUTTONS
+ * -------------------------------------------------------------------- */
+
+.back {
+    position: absolute;
+    top: 3rem;
+    left: 6vw;
+    text-decoration: none;
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--link-color);
+    z-index: 3;
+}
+
+.back:hover {
+    color: var(--blue-green);
+}
+
+.forward {
+    position: absolute;
+    top: 3rem;
+    right: 6vw;
+    text-decoration: none;
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color:var(--link-color);
+    z-index: 3;
+}
+
+.forward:hover {
+    color: var(--blue-green);
+}
+
+.middle{
+    position: absolute;
+    top: 3rem;
+    left: 50vw;
+    text-decoration: none;
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--link-color);
+    z-index: 3;
+}
+
+.middle:hover {
+    color: var(--blue-green);
+}

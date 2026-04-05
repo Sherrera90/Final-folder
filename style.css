@@ -1,0 +1,466 @@
+:root {
+    --bg-color: #f3efd7;
+    --text-color: #477998;
+    --dark-color: #291F1E;
+    --header-color:#5bc2af;
+    --dark-blue:#1f3148;
+    --orange:#f2633f;
+    --georgia-clay:#51210d;
+    --gap: 20px;
+   
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Cormorant Garamond', serif;
+    font-weight:300;
+    padding: 20px;
+    margin:0;
+    width:100%;
+    overflow-x: hidden;
+}
+
+a{
+    text-decoration: none;
+    color:inherit;
+}
+
+/*Fonts*/
+
+/* 1. The Logo Header */
+.site-header {
+    width: 100%;
+    height: 100vh;
+    margin:0;
+    padding:0;
+    background-color: var(--bg-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Header styling adjustments */
+.header-left {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.logo-container{
+    width:100%;
+    height:100%;
+    display:flex;
+    justify-content: center;
+}
+
+.main-logo {
+    height: 100%; 
+    width: 90vw;
+    object-fit: contain;
+    display: block;
+}
+
+/* Mini logo*/
+
+.mini-logo{
+    height: 20px;   /* Small size for the bar */
+    width: auto;
+    opacity: 0;     /* Hidden by default */
+    transform: translateX(-10px);
+    transition: all 0.4s ease;
+    margin-right: 20px;
+}
+
+.nav-scrolled .mini-logo {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* 2. The Sticky Navigation */
+.sticky-nav {
+    position: -webkit-sticky; /* Support for Safari */
+    position: sticky;
+    top: 0;                   /* This tells it WHERE to stick */
+    padding: 20px 40px;
+    z-index: 1000;            /* Ensures it stays on top of project images */
+    border-bottom: 1px solid rgba(0,0,0,0.05); /* Subtle line when scrolling */
+    font-family: 'Slabo', 'serif';
+    font-weight:400;
+}
+
+/* Container inside the nav to keep things aligned */
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+} 
+
+.menu-btn{
+  background: none;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  font-family: inherit;
+  padding: 0;
+  color: var(--text-color);
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-color);
+    border:2px solid #477998;
+    border-radius: 50px;
+    padding:8px 8px;
+    margin: 0 10px;
+    opacity: 0.4;
+}
+
+.nav-links a.active {
+    opacity: 1;
+}
+
+.nav-links a:hover{
+    background-color:var(--text-color);
+    color:var(--bg-color);
+}
+
+/* Project Card */
+.projects-container{
+    font-family: 'slabo';
+}
+
+.image-wrapper {
+    position: relative;
+    background: #e0e0e0;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    margin-bottom: 12px;
+}
+
+.image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/*.poster-card {
+   display: block;
+   width: 100%;
+   height: 100%;
+   text-decoration: none;
+}*/
+
+.grid-card{
+    display: flex;
+	justify-content: center;
+	align-items: center;
+	background: var(--dark-blue);
+	padding: 2rem;
+	color: hsl(40, 70%, 85%);
+    border-radius: 20px;
+}
+.poster-card {
+	display: flex;
+	flex-direction: column;
+
+	background:var(--text-color);
+	/*width: 20rem;*/
+	height: 25rem;
+	border: 1px solid hsl(40, 65%, 80%);
+	position: relative;
+	padding: 1rem;
+
+.corner {
+	width: 0.5rem;
+	height: 0.5rem;
+	border: 1px solid hsl(40, 65%, 80%);
+	position: absolute;
+
+	&::after,
+	&::before {
+	    content: "";
+		position: absolute;
+	}
+
+	&::after {
+		width: 2rem;
+		height: calc(1rem - 1px);
+	}
+
+	&::before {
+		width: calc(1rem - 1px);
+		height: 2rem;
+	}
+
+	&.left {
+		left: -0.5rem;
+
+	&::after {
+		left: calc(-2px + 1rem);
+		border-left: 1px solid hsl(40, 65%, 80%);
+	}
+
+		&::before {
+			left: -1px;
+			border-left: 1px solid  hsl(40, 65%, 80%);
+		}
+	}
+
+	&.right {
+		right: -0.5rem;
+
+		&::after {
+			right: calc(-2px + 1rem);
+			border-right: 1px solid hsl(40, 65%, 80%);
+		}
+
+		&::before {
+			right: -1px;
+			border-right: 1px solid hsl(40, 65%, 80%);
+		}
+	}
+
+	&.top {
+		top: -0.5rem;
+
+		&::after {
+			top: -1px;
+			border-top: 1px solid hsl(40, 65%, 80%);
+		}
+
+		&::before {
+			top: calc(-2px + 1rem);
+			border-top: 1px solid hsl(40, 65%, 80%);
+		}
+	}
+
+	&.bottom {
+		bottom: -0.5rem;
+
+		&::after {
+			bottom: -1px;
+			border-bottom: 1px solid hsl(40, 65%, 80%);
+		}
+
+		&::before {
+			bottom: calc(-2px + 1rem);
+			border-bottom: 1px solid hsl(40, 65%, 80%);
+		}
+	}
+	}
+}
+
+
+.hover-overlay{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    opacity:0;
+    transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    padding:15px;
+    pointer-events: none;
+    background: linear-gradient(rgba(0,0,0,0.2), transparent, rgba(0,0,0,0.2));
+}
+
+.poster-card:hover .hover-overlay{
+    opacity: 1;
+}
+
+.poster-card:hover img{
+    opacity:0.8;
+    transform: scale(1.05);
+}
+
+.tag{
+    position: absolute;
+    font-size: 0.80rem;
+    letter-spacing: 0.05em;
+    color: white;
+}
+
+.top-left{
+    top: 15px;
+    left: 15px;
+}
+
+.bottom-right{
+    bottom: 15px;
+    right: 15px;
+}
+
+
+/* Side and Main Styling */
+#content-wrapper.list-view{
+    display:grid;
+    gap: 80px;
+    padding: 0 40px;
+}
+
+.info-sidebar{
+    max-width: 1200px;
+    display: block !important; /* Always show this now */
+    margin: 0 auto;
+}
+.info-sidebar p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    max-width: 600px; /* Center the text and keep it readable */
+    color:var(--dark-color);
+}
+
+/* List Styling */
+.list-view .list-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid #859185; 
+    text-decoration:none;
+    color: var(--text-color);
+    cursor: pointer;
+    width:100%;
+    transition: opacity 0.3s ease;
+}
+
+.list-row:hover {
+    opacity: 0.5; 
+}
+
+.list-left{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.list-thumb{
+    width:60px;
+    height:80px;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.project-name {
+    font-family:'slabo' serif;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    color: var(--text-color);
+}
+
+.project-arrow{
+    font-size: 1.5rem;
+}
+
+/* --- 1. DEFAULT HIDDEN STATES --- */
+.info-sidebar, .list-row {
+    display: none;
+}
+
+/* --- 2. GRID VIEW STYLES --- */
+.grid-view .projects-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.list-view .grid-card {
+    display: none; /* Hide the big images! */
+}
+
+/* Optional: Slight animation during the switch */
+.grid-view, .list-view {
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/*#hover-image-container {
+    position: fixed;
+    pointer-events: none; /* So it doesn't block clicking 
+    width: 280px;
+    height: 350px;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    overflow: hidden;
+    transform: translate(-50%, -50%); /* Centers the image on the cursor 
+}
+
+#hover-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}*/
+
+/* Menu Drawer Styling */
+#menu-overlay {
+    max-height: 0; /* Hidden by default */
+    overflow: hidden;
+    transition: max-height 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    background-color: var(--bg-color);
+}
+
+/* When the 'open' class is added via JS */
+#menu-overlay.menu-open {
+    max-height: 500px; /* Adjust based on content size */
+    border-bottom: 1px solid #ddd;
+}
+
+.menu-content {
+    padding: 40px 0;
+    display: grid;
+    grid-template-columns: 0.4fr 0.6fr; /* Matches your list layout! */
+    gap: 40px;
+}
+
+.menu-bio {
+    font-size: 1.5rem;
+    line-height: 1.3;
+}
+
+.menu-socials {
+    list-style: none;
+}
+
+.menu-socials li {
+    margin-bottom: 10px;
+}
+
+.menu-socials a {
+    text-decoration: none;
+     color: var(--text-color);
+    font-size: 1.2rem;
+}
+
+
+/* Mobile Responsiveness */
+@media (max-width: 900px) {
+    .list-layout {
+        grid-template-columns: 1fr; /* Stack vertically on mobile */
+    }
+    .project-name {
+        font-size: 1.8rem;
+    }
+}
+@media only screen and (max-width: 600px) {
+     .nav-links a{
+        display:none;
+    }
+   .list-row{
+    display:show;
+   }
+}
