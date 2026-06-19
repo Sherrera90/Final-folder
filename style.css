@@ -179,86 +179,87 @@ a{
 	border: 1px solid hsl(40, 65%, 80%);
 	position: relative;
 	padding: 1rem;
+}
 
 .corner {
 	width: 0.5rem;
 	height: 0.5rem;
 	border: 1px solid hsl(40, 65%, 80%);
 	position: absolute;
-
-	&::after,
-	&::before {
-	    content: "";
-		position: absolute;
-	}
-
-	&::after {
-		width: 2rem;
-		height: calc(1rem - 1px);
-	}
-
-	&::before {
-		width: calc(1rem - 1px);
-		height: 2rem;
-	}
-
-	&.left {
-		left: -0.5rem;
-
-	&::after {
-		left: calc(-2px + 1rem);
-		border-left: 1px solid hsl(40, 65%, 80%);
-	}
-
-		&::before {
-			left: -1px;
-			border-left: 1px solid  hsl(40, 65%, 80%);
-		}
-	}
-
-	&.right {
-		right: -0.5rem;
-
-		&::after {
-			right: calc(-2px + 1rem);
-			border-right: 1px solid hsl(40, 65%, 80%);
-		}
-
-		&::before {
-			right: -1px;
-			border-right: 1px solid hsl(40, 65%, 80%);
-		}
-	}
-
-	&.top {
-		top: -0.5rem;
-
-		&::after {
-			top: -1px;
-			border-top: 1px solid hsl(40, 65%, 80%);
-		}
-
-		&::before {
-			top: calc(-2px + 1rem);
-			border-top: 1px solid hsl(40, 65%, 80%);
-		}
-	}
-
-	&.bottom {
-		bottom: -0.5rem;
-
-		&::after {
-			bottom: -1px;
-			border-bottom: 1px solid hsl(40, 65%, 80%);
-		}
-
-		&::before {
-			bottom: calc(-2px + 1rem);
-			border-bottom: 1px solid hsl(40, 65%, 80%);
-		}
-	}
-	}
 }
+
+.corner::after,
+.corner::before {
+    content: "";
+	position: absolute;
+}
+
+.corner::after {
+	width: 2rem;
+	height: calc(1rem - 1px);
+}
+
+.corner::before {
+	width: calc(1rem - 1px);
+	height: 2rem;
+}
+
+.corner.left {
+	left: -0.5rem;
+}
+
+.corner.left::after {
+	left: calc(-2px + 1rem);
+	border-left: 1px solid hsl(40, 65%, 80%);
+}
+
+.corner.left::before {
+	left: -1px;
+	border-left: 1px solid  hsl(40, 65%, 80%);
+}
+
+.corner.right {
+	right: -0.5rem;
+}
+
+.corner.right::after {
+	right: calc(-2px + 1rem);
+	border-right: 1px solid hsl(40, 65%, 80%);
+}
+
+.corner.right::before {
+	right: -1px;
+	border-right: 1px solid hsl(40, 65%, 80%);
+}
+
+.corner.top {
+	top: -0.5rem;
+}
+
+.corner.top::after {
+	top: -1px;
+	border-top: 1px solid hsl(40, 65%, 80%);
+}
+
+.corner.top::before {
+	top: calc(-2px + 1rem);
+	border-top: 1px solid hsl(40, 65%, 80%);
+}
+
+.corner.bottom {
+	bottom: -0.5rem;
+}
+
+.corner.bottom::after {
+	bottom: -1px;
+	border-bottom: 1px solid hsl(40, 65%, 80%);
+}
+
+.corner.bottom::before {
+	bottom: calc(-2px + 1rem);
+	border-bottom: 1px solid hsl(40, 65%, 80%);
+}
+
 
 
 .hover-overlay{
@@ -352,7 +353,7 @@ a{
 }
 
 .project-name {
-    font-family:'slabo' serif;
+    font-family:'slabo', serif;
     font-weight: 500;
     letter-spacing: -0.02em;
     color: var(--text-color);
@@ -461,6 +462,6 @@ a{
         display:none;
     }
    .list-row{
-    display:show;
+    display:flex;
    }
 }
