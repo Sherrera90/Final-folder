@@ -45,6 +45,8 @@ menuToggle.addEventListener('click', () => {
 });
 
 window.addEventListener('scroll', () => {
+    if(window.location.pathname.includes('impacthub.md','museo.md')) return;
+    
     const bigLogo = document.querySelector('.main-logo');
     const nav = document.querySelector('.sticky-nav');
     const scrollPosition = window.scrollY;
@@ -60,3 +62,5 @@ window.addEventListener('scroll', () => {
         nav.classList.remove('nav-scrolled');
     }
 });
+
+
