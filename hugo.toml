@@ -1,6 +1,0 @@
-baseURL = "/"
-languageCode = "en-us"
-title = "Stephanie Herrera — Design Portfolio"
-
-# This site is built entirely from static/ (plain HTML/CSS/JS),
-# not Hugo content/templates. No theme or layouts are needed.

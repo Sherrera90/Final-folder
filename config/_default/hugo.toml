@@ -1,0 +1,10 @@
+languageCode = "en-us"
+title = "Stephanie Herrera — Design Portfolio"
+
+# This site uses real Hugo templating: layouts/ + partials/ + content/
+# Raw HTML is allowed inside markdown content files (case study bodies).
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
