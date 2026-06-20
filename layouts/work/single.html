@@ -1,0 +1,9 @@
+{{ define "main" }}
+<a class="back" href="{{ if .NextInSection }}{{ .NextInSection.RelPermalink }}{{ else }}{{ "/" | relURL }}{{ end }}">← Back</a>
+<a class="middle" href="{{ "/" | relURL }}"> Home</a>
+<a class="forward" href="{{ if .PrevInSection }}{{ .PrevInSection.RelPermalink }}{{ else }}{{ "/" | relURL }}{{ end }}"> Next → </a>
+
+<section class="main_content">
+  {{ .Content }}
+</section>
+{{ end }}

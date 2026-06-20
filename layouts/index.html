@@ -1,0 +1,38 @@
+{{ define "main" }}
+<main id="content-wrapper" class="grid-view">
+
+    <section class="projects-container">
+        {{ range (.Site.GetPage "work").Pages.ByWeight }}
+        <div class="project-item">
+            <div class="grid-card">
+                <a class="poster-card" href="{{ .RelPermalink }}">
+                    <div class="corner top left"></div>
+                    <div class="corner top right"></div>
+                    <div class="corner bottom left"></div>
+                    <div class="corner bottom right"></div>
+                    <div class="image-wrapper">
+                        <img src="{{ .Params.image | relURL }}" alt="{{ .Title }}" />
+
+                        <div class="hover-overlay">
+                            <span class="tag top-left">{{ .Title }}</span>
+                            <span class="tag bottom-right">{{ .Params.tag }}</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <a href="{{ .RelPermalink }}" class="list-row">
+                <div class="list-left">
+                    <img src="{{ .Params.image | relURL }}" class="list-thumb" alt="{{ .Title }}">
+                    <span class="project-name">{{ .Title }}</span>
+                </div>
+                <div class="list-right">
+                    <p>{{ .Params.tag }}</p>
+                </div>
+                <span class="project-arrow">&#x21b1;</span>
+            </a>
+        </div>
+        {{ end }}
+    </section>
+</main>
+{{ end }}

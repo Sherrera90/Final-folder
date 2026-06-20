@@ -1,5 +1,10 @@
 languageCode = "en-us"
 title = "Stephanie Herrera — Design Portfolio"
 
-# This site is built entirely from static/ (plain HTML/CSS/JS),
-# not Hugo content/templates. No theme or layouts are needed.
+# This site uses real Hugo templating: layouts/ + partials/ + content/
+# Raw HTML is allowed inside markdown content files (case study bodies).
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
